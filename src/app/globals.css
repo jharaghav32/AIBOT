@@ -17,11 +17,53 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+@layer base{
+  body{
+    @apply dark:bg-[#191919] dark:text-white
+  }
+}
+@layer components{
+  body{
+    @apply dark:bg-[#191919] dark:text-white
+  }
+  .infoText{
+    @apply p-2 bg-gray-700/50 rounded-lg max-w-[300px]
+  }
+  .chatRow{
+   @apply rounded-lg px-5 py-3 text-sm flex items-center justify-center
+   space-x-2 hover:bg-yellow-200/70 cursor-pointer text-gray-300
+   transition-all duration-200 ease-out
+  }
+}
+
+.typing-animation .typing-dot{
+  height:7px;
+  width:7px;
+  opacity:0.7;
+  margin: 0 3px;
+  border-radius: 50%;
+  background: black;
+  animation: animateDots 1.5s var(--delay) ease-in-out infinite;
+}
+.typing-animation{
+  display: flex;
+}
+
+@keyframes animateDots{
+  0%,44%{
+      transform: translateY(0px);
+
+  }
+  44%{
+      opacity:0.2
+  }
+  22%{
+      opacity: 0.4;
+      transform:translateY(-6px);
+  }
 }
