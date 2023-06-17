@@ -26,6 +26,7 @@ const ChatRow = ({id}:Props) => {
      await deleteDoc(doc(db,'users',session?.user?.email!,'chats',id))
      router.replace('/chat')
     }
+    
   return (
    <Link href={`/chat/${id}`} className={`text-black dark:text-white border  my-2 chatRow justify-center ${active?'border-black dark:border-white':'border-gray-200 dark:dark:border-[#434343]'}`}>
    <HiChatBubbleLeft className='text-black dark:text-white'/>
