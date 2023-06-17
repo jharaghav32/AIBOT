@@ -100,7 +100,7 @@ const Chat = ({chatId}:Props) => {
       <div className='flex flex-col items-start gap-2'>
        {messages?.docs?.length==0 &&  <div className='w-[40%] border  rounded-lg  ml-2 p-2 bg-[#F1F1F3] dark:text-white dark:bg-[#272D2F]' ><span className='flex text-2xl font-bold'>Hi🖖</span>Please choose a question below, or feel free to type your own inquiry</div>}
         {messages?.docs.length==0?data?.map((prompt)=>(
-        <button className='border text-start  w-[50%] m-2 rounded-lg p-2 bg-[#F4F2EB] dark:bg-[#272D2F] 'onClick={()=>promptMessage(prompt?.title)} >
+        <button key={prompt?.title} className='border text-start  w-[50%] m-2 rounded-lg p-2 bg-[#F4F2EB] dark:bg-[#272D2F] 'onClick={()=>promptMessage(prompt?.title)} >
           <p>{prompt?.title}</p>
         </button>
         )):''}

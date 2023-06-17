@@ -8,8 +8,9 @@ type Props={
   dark:boolean,
   setdark:React.Dispatch<React.SetStateAction<boolean>>
 }
-const Navbar = ({dark,setdark}:Props) => {
+const Navbar = () => {
   const [toggle, settoggle] = useState(false);
+  const[dark,setdark]=useState(false);
 
   return (
     <nav className='bg-white dark:bg-[#191919] dark:text-white p-5 shadow-md mb-10 flex fixed top-0 left-0 z-20 w-full  justify-between items-center font-lobster text-xl md:text-3xl overflow-x-hidden mx-2 ' >
