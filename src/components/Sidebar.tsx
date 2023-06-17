@@ -22,6 +22,7 @@ const Sidebar = ({dark,setdark}:Props) => {
   const [bookmarkchats,load,err]=useCollection(
     session &&  query(collection(db,'users',session?.user?.email!,'bookmark'),orderBy('createdAt','asc'))
   )
+  
   return (
     <div id="sidebar" className={`flex flex-col transition-transform  md:translate-x-0  h-[80vh] border border-black dark:border-[#434343] rounded-lg mx-2  bg-white overflow-y-auto dark:bg-[#1E2223] dark:text-white`} style={{padding:'5px'}}>
       <div className=''>
