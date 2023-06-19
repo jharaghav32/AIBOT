@@ -3,6 +3,7 @@ import Sidebar from '../components/Sidebar'
 import './globals.css'
 import { SessionProvider } from '@/components/SessionProvider'
 import {getServerSession} from 'next-auth'
+import Head from 'next/head'
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 import Login from '../components/Login'
@@ -23,6 +24,14 @@ export default async function RootLayout({
   console.log(session)
   return (
     <html lang="en" className='' >
+     <Head>
+        {/* Add your meta tags here */}
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* Add your title and description */}
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+      </Head>
       
       <body className={ `${inter.className} ` }>
         
